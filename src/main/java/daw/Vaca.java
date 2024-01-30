@@ -18,9 +18,11 @@ public class Vaca {
     private String id;
     private LocalDate fecNacimiento;
     private String descripcion;
+    private static int contador;
 
-    public Vaca(String id, LocalDate fecNacimiento, String descripcion) {
-        this.id = id;
+    public Vaca(LocalDate fecNacimiento, String descripcion) {
+        contador++;
+        this.id = String.valueOf(contador);
         this.fecNacimiento = fecNacimiento;
         this.descripcion = descripcion;
     }
@@ -30,10 +32,6 @@ public class Vaca {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public LocalDate getFecNacimiento() {
